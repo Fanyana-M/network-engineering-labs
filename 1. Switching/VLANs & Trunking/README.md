@@ -1,6 +1,6 @@
 # 1.1 VLAN Creation & Trunking
 
-##Purpose
+## Purpose
 The purpose of this lab is to go through the fundamentals of VLAN creation, assigning access
 and trunk ports, as well as verifying VLAN propagation.
 
@@ -78,3 +78,5 @@ switchport mode access
 switchport access vlan 20
 end
 ~~~
+
+📄 Full write-up: [1.1. VLAN Creation & Trunking.pdf](1.1. VLAN Creation & Trunking.pdf)
