@@ -16,6 +16,7 @@ and trunk ports, as well as verifying VLAN propagation.
 ## Tasks
 
 ### SW1
+~~~plaintext
 enable
 config terminal
 hostname SW1
@@ -30,9 +31,10 @@ interface range fa0/1-2
 switchport mode trunk
 switchport trunk allowed vlan 10,20,30
 switchport trunk native vlan 30
-
+~~~
 
 ### SW2
+~~~plaintext
 enable
 config t
 hostname SW2
@@ -52,8 +54,10 @@ interface fa0/5
 switchport mode access
 switchport access vlan 10
 end
+~~~
 
 ### SW3
+~~~plaintext
 enable
 config t
 hostname SW3
@@ -73,3 +77,4 @@ interface fa0/5
 switchport mode access
 switchport access vlan 20
 end
+~~~
