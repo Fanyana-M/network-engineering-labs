@@ -79,4 +79,4 @@ switchport access vlan 20
 end
 ~~~
 
-📄 Full write-up: [1.1. VLAN Creation & Trunking.pdf](1.1. VLAN Creation & Trunking.pdf)
+📄 Full write-up: [1.1-VLAN-Creation-and-Trunking.pdf](1.1-VLAN-Creation-and-Trunking.pdf)
