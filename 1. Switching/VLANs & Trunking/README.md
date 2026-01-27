@@ -12,3 +12,64 @@ and trunk ports, as well as verifying VLAN propagation.
 - Configure trunk  links
 - Configure access ports
 - Configure native VLAN
+
+## Tasks
+
+### SW1
+enable
+config terminal
+hostname SW1
+vlan 10
+name Users
+vlan 20
+name Servers
+vlan 30
+name Management
+exit
+interface range fa0/1-2
+switchport mode trunk
+switchport trunk allowed vlan 10,20,30
+switchport trunk native vlan 30
+
+
+### SW2
+enable
+config t
+hostname SW2
+vlan 10
+name Users
+vlan 20
+name Servers
+vlan 30
+name Management
+exit
+interface range fa0/1,fa0/3
+switchport mode trunk
+switchport trunk allowed vlan 10,20,30
+switchport trunk native vlan 30
+exit
+interface fa0/5
+switchport mode access
+switchport access vlan 10
+end
+
+### SW3
+enable
+config t
+hostname SW3
+vlan 10
+name Users
+vlan 20
+name Servers
+vlan 30
+name Management
+exit
+interface range fa0/2-3
+switchport mode trunk
+switchport trunk allowed vlan 10,20,30
+switchport trunk native vlan 30
+exit
+interface fa0/5
+switchport mode access
+switchport access vlan 20
+end
