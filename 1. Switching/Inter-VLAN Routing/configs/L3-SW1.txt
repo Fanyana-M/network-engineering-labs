@@ -1,14 +1,30 @@
-SW1#show run
+L3-SW1#show run
 Building configuration...
 
-Current configuration : 1239 bytes
+Current configuration : 1423 bytes
 !
-version 15.0
+version 12.2(37)SE1
 no service timestamps log datetime msec
 no service timestamps debug datetime msec
 no service password-encryption
 !
-hostname SW1
+hostname L3-SW1
+!
+!
+!
+!
+!
+!
+ip routing
+!
+!
+!
+!
+!
+!
+!
+!
+!
 !
 !
 !
@@ -16,7 +32,11 @@ hostname SW1
 !
 !
 spanning-tree mode pvst
-spanning-tree extend system-id
+!
+!
+!
+!
+!
 !
 interface FastEthernet0/1
  switchport access vlan 10
@@ -71,8 +91,6 @@ interface FastEthernet0/23
 interface FastEthernet0/24
 !
 interface GigabitEthernet0/1
- switchport trunk allowed vlan 10,20
- switchport mode trunk
 !
 interface GigabitEthernet0/2
 !
@@ -80,14 +98,30 @@ interface Vlan1
  no ip address
  shutdown
 !
+interface Vlan10
+ mac-address 0040.0b78.4e01
+ ip address 192.168.10.1 255.255.255.0
+!
+interface Vlan20
+ mac-address 0040.0b78.4e02
+ ip address 192.168.20.1 255.255.255.0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
 !
 !
 !
 line con 0
 !
+line aux 0
+!
 line vty 0 4
- login
-line vty 5 15
  login
 !
 !
