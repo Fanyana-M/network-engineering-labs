@@ -86,4 +86,10 @@ L3-SW1(config)#ip routing
 L3-SW1(config)#end
 ```
 
+## Conclusion
+In this lab, we went through the configurations required for inter-VLAN routing. The first part consisted of a router-on-a-stick configuration, and the second consisted of routing through SVIs on a layer 3 switch. Subinterfaces were configured on R1 with their respective dot1Q encapsulation as well as their respective IP addresses. The link between R1 and SW1 was configured as a trunk, allowing both VLAN 10 and 20 and the respective ports facing the PCs were configured as access ports allowing their respective VLANs.
+
+For Part B, VLAN 10 & VLAN 20 were created on the L3 switch. The SVIs were then created and they were given their respective IP addresses. The ports facing the PCs were configured as access ports, allowing their respective VLANs. IP routing was also enabled on the switch to allow the PCs to communicate with one another.
+
+📄 Full write-up: [Inter-VLAN-Routing.pdf](Inter-VLAN-Routing.pdf)
 
