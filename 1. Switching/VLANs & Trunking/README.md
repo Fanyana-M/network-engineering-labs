@@ -1,4 +1,4 @@
-# 1.1 VLAN Creation & Trunking
+# VLAN Creation & Trunking
 
 ## Purpose
 The purpose of this lab is to go through the fundamentals of VLAN creation, assigning access
