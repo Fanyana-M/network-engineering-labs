@@ -88,3 +88,5 @@ We also see that Fa0/2 on SW1 as well as Fa0/3 on SW2 are designated as the root
 For the second part, we enabled RSTP on all 3 switches, shutdown Fa0/2 on SW1, and observed how much quicker Fa0/1 was unblocked to allow packets to flow back to the root bridge, and how quickly it was blocked when the interface was enabled again. 
 
 For the last part, we created VLAN 10 & 20 on the switches and configured the links as trunks, allowing both the VLANs. After configuring the priority values for the VLANs on SW1 & SW2, we could see that SW1 was designated as the root bridge for VLAN 10, and SW2 was designated as the root bridge for VLAN 20. This was due to setting a priority value that is lower than the default value of 32768. SW3 remained the root bridge of VLAN1 as it was before.
+
+📄 Full write-up: [Spanning-Tree-Variants.pdf](Spanning-Tree-Variants.pdf)
