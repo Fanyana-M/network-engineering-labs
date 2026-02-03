@@ -69,7 +69,7 @@ SW2(config)#int range fa0/1,fa0/3
 SW2(config-if-range)#switchport mode trunk
 SW2(config-if-range)#switchport trunk allowed vlan 10,20
 SW2(config-if-range)#exit
-SW2(config)#spanning-tree vlan 20 priority 4096
+SW2(config)#spanning-tree vlan 20 priority 4096 *(there's a typo on the pdf)
 SW2(config)#end
 ```
 #### SW3:
