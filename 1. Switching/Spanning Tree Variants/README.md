@@ -4,7 +4,7 @@
 The purpose of this lab is to explore and understand the different variants of the Spanning Tree Protocol (STP), that being STP, RSTP (Rapid Spanning Tree Protocol) & PVST+ (Per-VLAN Spanning Tree Plus). We’ll look into how a switch elects a root bridge, blocks redundant links and how they converge under failure. We’ll also look at the differences across STP, RSTP as well as PVST+ modes.
 
 ## Topology
-![Topology](topology.png)
+![Topology](topology_STP.png)
 
 ## Requirements
 ### 1. STP (IEEE 802.1D)
