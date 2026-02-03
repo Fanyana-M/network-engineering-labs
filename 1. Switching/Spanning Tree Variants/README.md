@@ -53,7 +53,7 @@ For the last part, we’ll go ahead and enable PVST+ and create VLAN 10 and VLAN
 (config-vlan)#vlan 20
 ```
 
-#### SW1
+#### SW1:
 ```
 SW1(config)#int range fa0/1-2
 SW1(config-if-range)#switchport mode trunk
@@ -63,7 +63,7 @@ SW1(config)#spanning-tree vlan 10 priority 4096
 SW1(config)#end
 ```
 
-#### SW2
+#### SW2:
 ```
 SW2(config)#int range fa0/1,fa0/3
 SW2(config-if-range)#switchport mode trunk
@@ -72,10 +72,19 @@ SW2(config-if-range)#exit
 SW2(config)#spanning-tree vlan 10 priority 4096
 SW2(config)#end
 ```
-#### SW3
+#### SW3:
 ```
 SW3(config)#int range fa0/1-2
 SW3(config-if-range)#switchport mode trunk
 SW3(config-if-range)#switchport trunk allowed vlan 10,20
 SW3(config-if-range)#end
 ```
+
+## Conclusion
+From figure 4, we observe that SW3 has been elected as the root bridge, and as a result both of its interfaces Fa0/3 and Fa0/2 are designated ports. Since we’re using VLAN1, all 3 switches have the same priority value (32768+1[VLAN ID]. Therefore, SW3 has the lowest MAC address, hence why it was elected as the root bridge (Root bridge = Least value given by [Priority + VLANID + MAC Address]).
+
+We also see that Fa0/2 on SW1 as well as Fa0/3 on SW2 are designated as the root ports. These are the ports on the non-root bridge switches that have the lowest path cost to the root bridge. This leaves Fa0/1 on SW1 and SW2 respectively. The switch port with the lowest bridge ID will then be selected as a designated port as well (lower MAC address since priority and VLAN are the same), which in this case is Fa0/1 on SW2. Therefore Fa0/1 on SW1 will be blocked as per the STP protocol.
+
+For the second part, we enabled RSTP on all 3 switches, shutdown Fa0/2 on SW1, and observed how much quicker Fa0/1 was unblocked to allow packets to flow back to the root bridge, and how quickly it was blocked when the interface was enabled again. 
+
+For the last part, we created VLAN 10 & 20 on the switches and configured the links as trunks, allowing both the VLANs. After configuring the priority values for the VLANs on SW1 & SW2, we could see that SW1 was designated as the root bridge for VLAN 10, and SW2 was designated as the root bridge for VLAN 20. This was due to setting a priority value that is lower than the default value of 32768. SW3 remained the root bridge of VLAN1 as it was before.
