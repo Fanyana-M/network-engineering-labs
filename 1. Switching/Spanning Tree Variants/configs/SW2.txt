@@ -1,4 +1,4 @@
-SW1#show run
+SW2#show run
 Building configuration...
 
 Current configuration : 1233 bytes
@@ -8,7 +8,7 @@ no service timestamps log datetime msec
 no service timestamps debug datetime msec
 no service password-encryption
 !
-hostname SW1
+hostname SW2
 !
 !
 !
@@ -17,17 +17,17 @@ hostname SW1
 !
 spanning-tree mode pvst
 spanning-tree extend system-id
-spanning-tree vlan 10 priority 4096
+spanning-tree vlan 20 priority 4096
 !
 interface FastEthernet0/1
  switchport trunk allowed vlan 10,20
  switchport mode trunk
 !
 interface FastEthernet0/2
- switchport trunk allowed vlan 10,20
- switchport mode trunk
 !
 interface FastEthernet0/3
+ switchport trunk allowed vlan 10,20
+ switchport mode trunk
 !
 interface FastEthernet0/4
 !
