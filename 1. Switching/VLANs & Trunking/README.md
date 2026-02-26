@@ -79,4 +79,7 @@ switchport access vlan 20
 end
 ~~~
 
+## Conclusion
+In this lab, we went through the configuration steps necessary to configure 3 different vlans 3 switches. We also configured the respective trunk and access ports, and changed the native VLAN of the trunk ports to VLAN 30. We also verified our configurations using the respective show commands.
+
 📄 Full write-up: [1.1-VLAN-Creation-and-Trunking.pdf](1.1-VLAN-Creation-and-Trunking.pdf)
