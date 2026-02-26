@@ -4,9 +4,7 @@
 The purpose of this lab is to explore the concept of an EtherChannel; bundling multiple physical links into one logical link. We’ll also look into understanding negotiation modes, preventing misconfigurations, as well as load-balancing behavior.
 
 ## Topology
-
-
-
+![Topology](topology_EtherChannel.png)
 
 ## Requirements
 In this lab, we shall create two EtherChannels, one using LACP and another using PAgP.
@@ -77,3 +75,5 @@ SW2(config-if-range)#no shut
 
 ### Part C
 We have already seen what happens when one side of the EtherChannel is configured with LACP while the other uses PAgP.
+
+📄 Full write-up: [EtherChannel.pdf](EtherCHannel.pdf)
