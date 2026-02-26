@@ -3,7 +3,7 @@
 The purpose of this lab is to familiarize ourselves with IPv6 structure and notation. We’re going  to look at how we enable IPv6 on Cisco routers as well as how to configure IPv6 static routes.  Let’s get into it. 
 
 ## Topology
-
+![Topology](topology-ipv6.png)
 
 ## Requirements 
 1. Enable IPv6 routing and configure IPv6 addresses on the relevant interfaces on all 
